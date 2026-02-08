@@ -4,7 +4,7 @@
 
 :root {
     /* Color Palette */
-    --cream: #fffcf2;          /* Main background */
+    --lilac: #BFABCB;          /* Main background */
     --beige: #ccc5b9;           /* Secondary background */
     --dark-gray: #403d39;       /* Body text */
     --charcoal: #252422;        /* Headlines */
@@ -37,7 +37,7 @@ html {
 body {
     font-family: var(--font-body);
     color: var(--dark-gray);
-    background-color: var(--cream);
+    background-color: var(--lilac);
     line-height: 1.7;
     overflow-x: hidden;
 }
@@ -237,7 +237,7 @@ a {
 
 .btn-primary {
     background-color: var(--accent);
-    color: var(--cream);
+    color: var(--lilac);
     border-color: var(--accent);
 }
 
@@ -255,7 +255,7 @@ a {
 
 .btn-secondary:hover {
     background-color: var(--charcoal);
-    color: var(--cream);
+    color: var(--lilac);
 }
 
 /* ===========================
@@ -286,7 +286,7 @@ section {
    =========================== */
 
 .about-section {
-    background-color: var(--cream);
+    background-color: var(--lilac);
 }
 
 .about-content {
@@ -355,7 +355,7 @@ section {
 }
 
 .expertise-card {
-    background-color: var(--cream);
+    background-color: var(--lilac);
     padding: 2.5rem;
     border-radius: 12px;
     transition: all 0.3s ease;
@@ -406,13 +406,13 @@ section {
 }
 
 .skill-tag {
-    background-color: var(--cream);
+    background-color: var(--lilac);
     color: var(--dark-gray);
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     font-size: 0.95rem;
     font-weight: 500;
-    border: 2px solid var(--cream);
+    border: 2px solid var(--lilac);
     transition: all 0.3s ease;
 }
 
@@ -426,7 +426,7 @@ section {
    =========================== */
 
 .portfolio-section {
-    background-color: var(--cream);
+    background-color: var(--lilac);
 }
 
 .portfolio-grid {
@@ -437,7 +437,7 @@ section {
 }
 
 .portfolio-item {
-    background-color: var(--cream);
+    background-color: var(--lilac);
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid var(--beige);
@@ -452,7 +452,7 @@ section {
 
 .portfolio-image {
     height: 250px;
-    background: linear-gradient(135deg, var(--beige) 0%, var(--cream) 100%);
+    background: linear-gradient(135deg, var(--beige) 0%, var(--lilac) 100%);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -556,7 +556,7 @@ section {
 
 /* Contact Form */
 .contact-form-wrapper {
-    background-color: var(--cream);
+    background-color: var(--lilac);
     padding: 2.5rem;
     border-radius: 12px;
     border: 2px solid rgba(64, 61, 57, 0.1);
@@ -594,7 +594,7 @@ section {
     border-radius: 6px;
     font-family: var(--font-body);
     font-size: 1rem;
-    background-color: var(--cream);
+    background-color: var(--lilac);
     color: var(--dark-gray);
     transition: border-color 0.3s;
 }
@@ -616,7 +616,7 @@ section {
 
 .footer {
     background-color: var(--charcoal);
-    color: var(--cream);
+    color: var(--lilac);
     padding: 2.5rem 0;
     text-align: center;
 }
