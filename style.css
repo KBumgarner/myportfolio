@@ -4,11 +4,11 @@
 
 :root {
     /* Color Palette */
-    --lilac: #BFABCB;          /* Main background */
-    --lavender: #F2D5F8;           /* Secondary background */
+    --lilac: #F2D5F8;         /* Main background */
+    --lavender: #BFABCB;           /* Secondary background */
     --dark-gray: #403d39;       /* Body text */
     --charcoal: #252422;        /* Headlines */
-    --accent: #EAC8CA;          /* Accent/CTA */
+    --accent: #994568;          /* Accent/CTA */
     
     /* Typography - Use these font families or replace with Le Monde Livre and Acumin Pro if you have them */
     --font-headline: 'Lora', serif;              /* Fallback for Le Monde Livre */
