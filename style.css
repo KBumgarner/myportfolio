@@ -452,7 +452,7 @@ section {
 
  .portfolio-image {
 height: 250px;
-background: linear-gradient(135deg, var(--lavender) 0%, var(--lilac) 100%);
+width: 250px;
 display: flex;
 align-items: center;
 justify-content: center;
