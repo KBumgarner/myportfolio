@@ -484,19 +484,6 @@ border-bottom: 2px solid var(--beige);
     letter-spacing: 0.5px;
 }
 
-/* This styles the link inside the project-type paragraph */
-.project-type a {
-    color: inherit;            /* This makes the link use the same color as the text around it */
-    text-decoration: none;     /* This removes the default blue underline */
-    transition: opacity 0.3s;  /* This makes the hover effect smooth */
-}
-
-/* This makes it react when someone hovers over it */
-.project-type a:hover {
-    opacity: 0.7;              /* Fades slightly to show it's clickable */
-    text-decoration: underline; /* Adds the underline back only on hover */
-}
-
 .project-description {
     color: var(--dark-gray);
     margin-bottom: 1.5rem;
