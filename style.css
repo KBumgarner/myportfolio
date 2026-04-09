@@ -296,6 +296,19 @@ section {
     margin-top: 3rem;
 }
 
+/* --- ADD THIS NEW CODE BELOW --- */
+
+.profile-shot {
+    width: 100%;
+    height: 450px; /* Forces the box height */
+    object-fit: cover; /* Fills the box without stretching your face */
+    object-position: center; 
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* --- END OF NEW CODE --- */
+
 .about-text .lead {
     font-size: 1.35rem;
     font-weight: 500;
@@ -450,13 +463,19 @@ section {
     border-color: var(--accent);
 }
 
- .portfolio-image {
-height: 250px;
-background: linear-gradient(135deg, var(--lavender) 0%, var(--lilac) 100%);
-display: flex;
-align-items: center;
-justify-content: center;
-border-bottom: 2px solid var(--beige); 
+.portfolio-image {
+    height: 250px; /* This keeps the "box" height consistent */
+    width: 100%;
+    overflow: hidden; /* This hides any part of the image that is too large */
+    border-bottom: 2px solid var(--lavender); /* Changed 'var(--beige)' to 'var(--lavender)' since beige wasn't in your root */
+}
+
+.portfolio-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This forces the image to fill the box without stretching */
+    object-position: center; /* This keeps the center of your image visible */
+    display: block;
 }
 .project-placeholder {
     font-size: 1.2rem;
