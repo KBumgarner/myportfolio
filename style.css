@@ -42,6 +42,11 @@ body {
     overflow-x: hidden;
 }
 
+/* Global Section Spacing Fix */
+section {
+    padding: var(--section-padding) 0;
+}
+
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-headline);
     color: var(--charcoal);
@@ -49,7 +54,11 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* This is the rule we have to override later for hover effects */
+/* Spacing under section titles */
+h2 {
+    margin-bottom: 2.5rem;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -312,9 +321,13 @@ a {
     box-shadow: 0 10px 30px rgba(37, 36, 34, 0.1);
 }
 
+/* Fix for skill tags spacing */
 .skill-tag {
+    display: inline-block;
     background-color: var(--lilac);
     padding: 0.75rem 1.5rem;
+    margin-bottom: 0.75rem; /* Gap between rows of tags */
+    margin-right: 0.25rem; /* Gap between side-by-side tags */
     border-radius: 50px;
     border: 2px solid var(--lilac);
     transition: all 0.3s ease;
@@ -356,6 +369,11 @@ a {
 
 .portfolio-content { padding: 2rem; }
 
+/* Ensures content within the box has breathing room at the bottom */
+.portfolio-content *:last-child {
+    margin-bottom: 0;
+}
+
 .portfolio-content h3 {
     font-size: 1.5rem;
     margin-bottom: 0.25rem;
@@ -371,7 +389,6 @@ a {
     display: block;
 }
 
-/* Specific styling for the portfolio links */
 .project-type {
     font-size: 1rem;
     margin-bottom: 1rem;
@@ -385,7 +402,6 @@ a {
     transition: all 0.3s ease;
 }
 
-/* This rule uses higher specificity to force the underline on hover */
 .portfolio-item .project-type a:hover {
     text-decoration: underline !important;
     opacity: 0.7;
@@ -411,6 +427,10 @@ a {
     background-color: var(--lilac);
     padding: 2.5rem;
     border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 1.5rem; /* Space between form fields */
 }
 
 .form-group input, .form-group textarea {
@@ -447,4 +467,5 @@ a {
 
 @media (max-width: 768px) {
     .hero-title { font-size: 2.5rem; }
+    section { padding: 3rem 0; } /* Slightly less padding on mobile */
 }
