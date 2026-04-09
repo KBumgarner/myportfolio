@@ -493,6 +493,18 @@ section {
     margin-bottom: 0.5rem;
     color: var(--charcoal);
 }
+/NEW TEST/
+.project-context {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    font-style: italic;
+    color: var(--dark-gray);
+    opacity: 0.8; /* Makes it look slightly secondary to the title */
+    margin-top: -0.25rem; /* Pulls it closer to the heading */
+    margin-bottom: 1rem;
+    display: block; /* Ensures it sits on its own line */
+}
+/NEW TEST/
 
 .project-type {
     font-size: 0.9rem;
