@@ -3,18 +3,15 @@
    =========================== */
 
 :root {
-    /* Color Palette */
-    --lilac: #F2D5F8;         /* Main background */
-    --lavender: #BFABCB;      /* Secondary background */
-    --dark-gray: #403d39;     /* Body text */
-    --charcoal: #252422;      /* Headlines */
-    --accent: #994568;        /* Accent/CTA */
+    --lilac: #F2D5F8;
+    --lavender: #BFABCB;
+    --dark-gray: #403d39;
+    --charcoal: #252422;
+    --accent: #994568;
     
-    /* Typography */
     --font-headline: 'Lora', serif;
     --font-body: 'Inter', sans-serif;
     
-    /* Spacing */
     --section-padding: 5rem;
     --container-width: 1200px;
 }
@@ -42,7 +39,7 @@ body {
     overflow-x: hidden;
 }
 
-/* Global Section Spacing Fix */
+/* FIX 1: This ensures every section has breathing room */
 section {
     padding: var(--section-padding) 0;
 }
@@ -54,9 +51,15 @@ h1, h2, h3, h4, h5, h6 {
     font-weight: 700;
 }
 
-/* Spacing under section titles */
-h2 {
-    margin-bottom: 2.5rem;
+/* FIX 2: Space under "About Me", "Areas of Expertise", etc. */
+.section-title {
+    margin-bottom: 1.5rem;
+}
+
+/* FIX 3: Space under the project/section subtitles */
+.section-description {
+    margin-bottom: 3rem;
+    max-width: 700px;
 }
 
 a {
@@ -84,7 +87,6 @@ a {
     padding: 1.25rem 0;
     z-index: 1000;
     border-bottom: 1px solid rgba(64, 61, 57, 0.1);
-    transition: all 0.3s ease;
 }
 
 .nav-container {
@@ -100,46 +102,12 @@ a {
     font-family: var(--font-headline);
     font-size: 1.5rem;
     font-weight: 700;
-    color: var(--charcoal);
-    transition: color 0.3s;
-}
-
-.logo:hover {
-    color: var(--accent);
 }
 
 .nav-menu {
     display: flex;
     list-style: none;
     gap: 2.5rem;
-}
-
-.nav-menu a {
-    font-family: var(--font-body);
-    font-weight: 500;
-    font-size: 0.95rem;
-    color: var(--dark-gray);
-    transition: color 0.3s;
-    position: relative;
-}
-
-.nav-menu a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background-color: var(--accent);
-    transition: width 0.3s;
-}
-
-.nav-menu a:hover {
-    color: var(--accent);
-}
-
-.nav-menu a:hover::after {
-    width: 100%;
 }
 
 /* ===========================
@@ -155,61 +123,11 @@ a {
     text-align: center;
     padding: 8rem 2rem 4rem;
     background: linear-gradient(135deg, var(--lilac) 0%, var(--lavender) 100%);
-    position: relative;
 }
 
-.hero-title {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
-    color: var(--charcoal);
-    animation: fadeInUp 1s ease-out;
-}
-
-.hero-subtitle {
-    font-size: 1.4rem;
-    font-weight: 400;
-    color: var(--dark-gray);
-    margin-bottom: 3rem;
-    animation: fadeInUp 1s ease-out 0.2s backwards;
-}
-
-.hero-cta {
-    display: flex;
-    gap: 1.5rem;
-    justify-content: center;
-    flex-wrap: wrap;
-    animation: fadeInUp 1s ease-out 0.4s backwards;
-}
-
-.scroll-indicator {
-    position: absolute;
-    bottom: 3rem;
-    left: 50%;
-    transform: translateX(-50%);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.5rem;
-    color: var(--dark-gray);
-    font-size: 0.85rem;
-    opacity: 0.7;
-}
-
-.scroll-arrow {
-    animation: bounce 2s infinite;
-    font-size: 1.5rem;
-}
-
-@keyframes bounce {
-    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-    40% { transform: translateY(10px); }
-    60% { transform: translateY(5px); }
-}
-
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(30px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+.hero-title { font-size: 3.5rem; margin-bottom: 1.5rem; }
+.hero-subtitle { font-size: 1.4rem; margin-bottom: 3rem; }
+.hero-cta { display: flex; gap: 1.5rem; justify-content: center; }
 
 /* ===========================
    BUTTONS
@@ -218,82 +136,32 @@ a {
 .btn-primary, .btn-secondary {
     display: inline-block;
     padding: 1rem 2.5rem;
-    font-family: var(--font-body);
     font-weight: 600;
-    font-size: 1rem;
     border-radius: 6px;
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
 }
 
-.btn-primary {
-    background-color: var(--accent);
-    color: var(--lilac);
-    border-color: var(--accent);
-}
-
-.btn-primary:hover {
-    background-color: transparent;
-    color: var(--accent);
-    border-color: var(--accent);
-}
-
-.btn-secondary {
-    background-color: transparent;
-    color: var(--charcoal);
-    border-color: var(--charcoal);
-}
-
-.btn-secondary:hover {
-    background-color: var(--charcoal);
-    color: var(--lilac);
-}
+.btn-primary { background-color: var(--accent); color: white; }
+.btn-secondary { border-color: var(--charcoal); }
 
 /* ===========================
    ABOUT SECTION
    =========================== */
 
 .about-section { background-color: var(--lilac); }
-
 .about-content {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: 4rem;
-    margin-top: 3rem;
+    align-items: center;
 }
 
 .profile-shot {
     width: 100%;
-    height: 450px;
-    object-fit: cover;
-    object-position: center;
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-}
-
-.about-text .lead {
-    font-size: 1.35rem;
-    font-weight: 500;
-    color: var(--charcoal);
-    margin-bottom: 1.5rem;
-}
-
-.about-text p { margin-bottom: 1.5rem; }
-
-.stat-item {
-    background-color: rgba(204, 197, 185, 0.3);
-    padding: 2rem;
-    border-radius: 12px;
-    text-align: center;
-    border-left: 4px solid var(--accent);
-}
-
-.stat-number {
-    display: block;
-    font-family: var(--font-headline);
-    font-size: 2.5rem;
-    color: var(--accent);
 }
 
 /* ===========================
@@ -306,34 +174,38 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
 }
 
 .expertise-card {
     background-color: var(--lilac);
     padding: 2.5rem;
     border-radius: 12px;
-    transition: all 0.3s ease;
 }
 
-.expertise-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(37, 36, 34, 0.1);
+/* FIX 4: Space above the "Tools & Technologies" header */
+.skills-section {
+    margin-top: 4rem;
 }
 
-/* Fix for skill tags spacing */
+.subsection-title {
+    margin-bottom: 1.5rem;
+}
+
+/* FIX 5: Space for the Skill Tags so they don't touch */
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem; /* This puts space between all buttons automatically */
+}
+
 .skill-tag {
-    display: inline-block;
     background-color: var(--lilac);
     padding: 0.75rem 1.5rem;
-    margin-bottom: 0.75rem; /* Gap between rows of tags */
-    margin-right: 0.25rem; /* Gap between side-by-side tags */
     border-radius: 50px;
-    border: 2px solid var(--lilac);
-    transition: all 0.3s ease;
+    border: 2px solid var(--accent);
+    color: var(--accent);
+    font-weight: 500;
 }
-
-.skill-tag:hover { border-color: var(--accent); }
 
 /* ===========================
    PORTFOLIO SECTION
@@ -341,9 +213,8 @@ a {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 3rem;
-    margin-top: 3rem;
 }
 
 .portfolio-item {
@@ -351,14 +222,13 @@ a {
     border-radius: 12px;
     overflow: hidden;
     border: 2px solid var(--lavender);
-    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
 }
 
 .portfolio-image {
     height: 250px;
     width: 100%;
-    overflow: hidden;
-    border-bottom: 2px solid var(--lavender);
 }
 
 .portfolio-image img {
@@ -367,61 +237,38 @@ a {
     object-fit: cover;
 }
 
-.portfolio-content { padding: 2rem; }
-
-/* Ensures content within the box has breathing room at the bottom */
-.portfolio-content *:last-child {
-    margin-bottom: 0;
-}
-
-.portfolio-content h3 {
-    font-size: 1.5rem;
-    margin-bottom: 0.25rem;
-    color: var(--charcoal);
+/* FIX 6: Interior padding for the portfolio boxes */
+.portfolio-content {
+    padding: 2rem;
+    flex-grow: 1;
 }
 
 .project-context {
-    font-size: 0.95rem;
-    font-style: italic;
-    color: var(--dark-gray);
-    opacity: 0.8;
-    margin-bottom: 1rem;
     display: block;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
 }
 
 .project-type {
-    font-size: 1rem;
-    margin-bottom: 1rem;
-    font-weight: 600;
+    margin-bottom: 1.5rem;
 }
 
 .project-type a {
     color: var(--accent);
-    text-decoration: none;
-    display: inline-block;
-    transition: all 0.3s ease;
+    font-weight: 600;
+    text-decoration: underline;
 }
-
-.portfolio-item .project-type a:hover {
-    text-decoration: underline !important;
-    opacity: 0.7;
-}
-
-.project-description { line-height: 1.7; }
 
 /* ===========================
    CONTACT SECTION
    =========================== */
 
 .contact-section { background-color: var(--lavender); }
-
 .contact-content {
     display: grid;
     grid-template-columns: 1fr 1.5fr;
     gap: 4rem;
 }
-
-.contact-method a { color: var(--accent); }
 
 .contact-form-wrapper {
     background-color: var(--lilac);
@@ -430,7 +277,12 @@ a {
 }
 
 .form-group {
-    margin-bottom: 1.5rem; /* Space between form fields */
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
 }
 
 .form-group input, .form-group textarea {
@@ -438,12 +290,6 @@ a {
     padding: 0.9rem;
     border: 2px solid var(--lavender);
     border-radius: 6px;
-    background-color: var(--lilac);
-}
-
-.form-group input:focus, .form-group textarea:focus {
-    outline: none;
-    border-color: var(--accent);
 }
 
 /* ===========================
@@ -453,19 +299,17 @@ a {
 .footer {
     background-color: var(--charcoal);
     color: var(--lilac);
-    padding: 2.5rem 0;
+    padding: 4rem 0;
     text-align: center;
 }
+
+.footer-tagline { margin-top: 1rem; opacity: 0.7; }
 
 /* ===========================
    RESPONSIVE
    =========================== */
 
 @media (max-width: 1024px) {
-    .about-content, .contact-content, .portfolio-grid { grid-template-columns: 1fr; }
-}
-
-@media (max-width: 768px) {
-    .hero-title { font-size: 2.5rem; }
-    section { padding: 3rem 0; } /* Slightly less padding on mobile */
+    .about-content, .contact-content { grid-template-columns: 1fr; }
+    .portfolio-grid { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
 }
